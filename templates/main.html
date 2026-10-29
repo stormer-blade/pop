@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat</title>
+    <link rel="stylesheet" href="/static/main.css">
+
+</head>
+
+<body>
+
+    <main class="main">
+
+        <header class="topbar">
+            Popcorn
+        </header>
+
+        <section class="chat">
+            <div class="messages">
+                {% for i in lenght %}
+                    {% if chats[i][0] == name %}
+                        <div class="message user">
+                            {{chats[i][0]}} →  {{chats[i][1]}}
+                        </div>
+                    {% else %}
+                        <div class="message bot">
+                            {{chats[i][0]}} → {{chats[i][1]}}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+
+        <div class="bottom">
+            <div class="input-box">
+                <form action="/home" method="POST">
+                    <input type="text" name="message" placeholder="Message...">
+                    <button>↑</button>
+                </form>
+            </div>
+            
+        </div>
+
+    </main>
+
+</body>
+</html>
